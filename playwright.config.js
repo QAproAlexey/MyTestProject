@@ -5,7 +5,7 @@ const { devices } = require('@playwright/test');
  */
 const config = {
     testDir: './tests',
-    retries: 2,
+    retries: 0,
     expect: {
     timeout: 10000
     },

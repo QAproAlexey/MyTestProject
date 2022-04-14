@@ -1,23 +1,18 @@
 const { expect } = require ('@playwright/test');
+const { openFile } = require('../support/helpers.js');
+const { uploadFile } = require('../support/helpers.js');
 exports.WestWind = class WestWind {
-  constructor (west) {
-    this.west = west;
-    this.chooseFileBtn = west.locator ("class=['fileUpload btn btn-primary']");
-    this.uploadFileBtn = west.locator ("[class='btn btn-primary']");
-    this.uploadedIdFile = west.locator ("[id='filename']")
-    this.uploadedFileImage = west.locator ("[class='clearfix margin-bottom']")
+  constructor (page) {
+    this.page = page;
+    this.chooseFileBtn = page.locator ("[class='fa fa-image']");
+    this.uploadFileBtn = page.locator ("[class='btn btn-primary']");
+    this.uploadedFileImage = page.locator ("[id='ImageList']")
   }
-//forth test case:
-    async chooseFile () {
-      await this.chooseFileBtn.click ();
-      await this.uploadIdFile.setInputFiles('./files/1.jpeg');
-      await this.west.waitForLoadState();
-  }
-    async uploadFile () {
-      await this.uploadFileBtn.click ();
-      await this.west.waitForLoadState();
-  }
-    async resultImage () {
-    await expect (this.uploadedFileImage).toBeVisible();
-  }
-    }
+//UploadFileWest:
+async resultImage () {
+      await uploadFile (this.page, this.chooseFileBtn);
+      await openFile (this.uploadFileBtn);
+      await this.page.waitForLoadState ();
+      await expect (this.uploadedFileImage).toBeVisible ();
+   }
+}
