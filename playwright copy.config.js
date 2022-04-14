@@ -1,20 +1,15 @@
-const { devices } = require('@playwright/test');
-/**
- * @see https://playwright.dev/docs/test-configuration
- * @type {import('@playwright/test').PlaywrightTestConfig}
- */
-const config = {
-    testDir: './tests',
-    retries: 2,
-    expect: {
-    timeout: 10000
-    },
-    use: {
-    browserName: 'chromium',
-    baseURL: 'https://www.asos.com/',
-    headless: false,
-    screenshot: 'only-on-failure',
-    video: 'retain-on-failure',
+{
+  "name": "tests",
+  "version": "1.0.0",
+  "description": "autotests lesson",
+  "main": "index.js",
+  "scripts": {},
+  "author": "Alexandr_Strahov",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^14.2.0"
   },
-};
-module.exports = config;
+  "devDependencies": {
+    "@playwright/test": "^1.19.2"
+  }
+}
