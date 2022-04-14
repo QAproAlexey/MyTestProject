@@ -14,7 +14,7 @@ exports.MainSite = class MainSite {
     this.imageLoggedInUser = page.locator ("[class='c7miiU7Q-FOKf36UEPOPu']");
     this.myAccountBtn = page.locator ("[class='yPAUReS IAtMKef _2LRr-ij CjZA9Ep']")
   }
-//SearchNike:
+//Search:
     async searchNike () {
       await this.searchInput.fill ('Nike');
       await this.searchSubmitBtn.click ();
