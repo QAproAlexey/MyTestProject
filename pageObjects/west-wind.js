@@ -4,9 +4,9 @@ const { uploadFile } = require('../support/helpers.js');
 exports.WestWind = class WestWind {
   constructor (page) {
     this.page = page;
-    this.chooseFileBtn = page.locator ("[class='fa fa-image']");
-    this.uploadFileBtn = page.locator ("[class='btn btn-primary']");
-    this.uploadedFileImage = page.locator ("[id='ImageList']")
+    this.chooseFileBtn = page.locator ('//*[@id="upload"]');
+    this.uploadFileBtn = page.locator ('//*[@type="submit"]');
+    this.uploadedFileImage = page.locator ('//*[@id="ImageList"]/img')
   }
 //UploadFileWest:
 async resultImage () {
