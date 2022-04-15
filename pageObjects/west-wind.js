@@ -8,7 +8,7 @@ exports.WestWind = class WestWind {
     this.uploadFileBtn = page.locator ('//*[@type="submit"]');
     this.uploadedFileImage = page.locator ('//*[@id="ImageList"]/img')
   }
-//UploadFileWest:
+//UploadFile:
 async resultImage () {
       await uploadFile (this.page, this.chooseFileBtn);
       await openFile (this.uploadFileBtn);
@@ -16,3 +16,4 @@ async resultImage () {
       await expect (this.uploadedFileImage).toBeVisible ();
    }
 }
+//done
