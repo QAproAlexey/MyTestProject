@@ -14,7 +14,7 @@ exports.MainSite = class MainSite {
     this.imageLoggedInUser = page.locator ("[class='c7miiU7Q-FOKf36UEPOPu']");
     this.myAccountBtn = page.locator ("[class='yPAUReS IAtMKef _2LRr-ij CjZA9Ep']")
   }
-//SearchNike:
+//SearchNike :
     async searchNike () {
       await this.searchInput.fill ('Nike');
       await this.searchSubmitBtn.click ();
@@ -24,7 +24,7 @@ exports.MainSite = class MainSite {
     await expect (this.searchResultText).toContainText ('nike');
     
   }
-//LoginWithEmptyFields:
+//LoginWithEmptyFields :
   async loginPageFun () {
     await this.dropdownAccount.click ();
     await this.myAccountBtn.click ();
@@ -35,7 +35,7 @@ exports.MainSite = class MainSite {
     await expect (this.emailValidationFailedHint).toContainText ('Oops! You need to type your email here');
     await expect (this.passValidationFailedHint).toContainText ('Hey, we need a password here');
   }
-//LoginWithInvalidData:
+//LoginWithInvalidData :
 async loginPageOpened () {
   await this.dropdownAccount.click ();
   await this.myAccountBtn.click ();

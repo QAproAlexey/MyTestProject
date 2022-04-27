@@ -26,7 +26,7 @@ test ('LoginWithEmptyField', async ( { page } ) => {
   await logInPageEmpty.loginPageFun ();
   await logInPageEmpty.checkResult ();
 });
-test('LoginWithInvalidData', async ( { page } ) => {
+test ('LoginWithInvalidData', async ( { page } ) => {
   const logInPage = new MainSite (page);
   await logInPage.loginPageOpened ();
   await logInPage.fillWithValidData ();

@@ -5,7 +5,7 @@ jobs:
       - image: mcr.microsoft.com/playwright:v1.21.0-focal
 
     steps:
-      - checkout
+     - checkout
       - run:
           name: Install JS deps
           command: npm install

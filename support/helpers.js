@@ -8,7 +8,7 @@ module.exports = {
   uploadFile: async function (page, locator) {
     const [fileChooser] = await Promise.all ([
       page.waitForEvent ('filechooser'),
-      await locator.click ()
+      await locator.click()
     ]);
     await fileChooser.setFiles (file);
   }
