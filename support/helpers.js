@@ -10,6 +10,7 @@ module.exports = {
       page.waitForEvent ('filechooser'),
       await locator.click()
     ]);
+    // test comment
     await fileChooser.setFiles (file);
   }
 };
